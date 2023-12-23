@@ -18,7 +18,8 @@ const EstiloGlobal = createGlobalStyle`
 export const Container = styled.div`
   margin: 0 auto;
   width: 100%;
-  max-width: 960px;
+  max-width: 480px;
+  margin-top: 24px;
 `
 
 export default EstiloGlobal

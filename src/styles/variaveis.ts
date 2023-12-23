@@ -3,5 +3,6 @@ export default {
   dark_slate_gray: '#254441',
   zomp: '#43aa8b',
   sage: '#b2b09b',
-  red_crayola: '#ef3054'
+  red_crayola: '#ef3054',
+  white: '#ffffff'
 }
