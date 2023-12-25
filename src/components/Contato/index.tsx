@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react'
 
 import * as S from './styles'
 import ContatoModel from '../../models/Contato'
-import { remover } from '../../store/reducers/contatos'
+import { remover, editar } from '../../store/reducers/contatos'
 
 type Props = ContatoModel
 
@@ -25,6 +25,11 @@ const Contato = ({
     setEmail(emailOriginal)
     setTelefone(telefoneOriginal)
   }, [nomeOriginal, emailOriginal, telefoneOriginal])
+
+  function salvaEdicao() {
+    dispatch(editar({ id, nome, email, telefone }))
+    setEstaEditando(false)
+  }
 
   function cancelaEdicao() {
     setEstaEditando(false)
@@ -50,6 +55,7 @@ const Contato = ({
                 icon="line-md:confirm-circle"
                 width="24"
                 height="24"
+                onClick={salvaEdicao}
               />
               <Icon
                 style={{ cursor: 'pointer', marginLeft: '8px' }}
