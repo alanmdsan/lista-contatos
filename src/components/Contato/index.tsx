@@ -34,9 +34,14 @@ const Contato = ({
   }
 
   return (
-    <S.Card>
+    <S.Card isEditing={estaEditando}>
       <S.CardHeader>
-        <h1>{nome}</h1>
+        <h1
+          contentEditable={estaEditando}
+          onBlur={(evento) => setNome(evento.currentTarget.innerText)}
+        >
+          {nome}
+        </h1>
         <div>
           {estaEditando ? (
             <>
@@ -76,11 +81,21 @@ const Contato = ({
       </S.CardHeader>
       <S.PhoneContainer>
         <Icon icon="ph:phone" width="24" height="24" />
-        <h2>{telefone}</h2>
+        <h2
+          contentEditable={estaEditando}
+          onBlur={(evento) => setTelefone(evento.currentTarget.innerText)}
+        >
+          {telefone}
+        </h2>
       </S.PhoneContainer>
       <S.MailContainer>
         <Icon icon="material-symbols:mail-outline" width="24" height="24" />
-        <h2>{email}</h2>
+        <h2
+          contentEditable={estaEditando}
+          onBlur={(evento) => setEmail(evento.currentTarget.innerText)}
+        >
+          {email}
+        </h2>
       </S.MailContainer>
     </S.Card>
   )

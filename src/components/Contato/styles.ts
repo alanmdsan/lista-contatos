@@ -1,8 +1,17 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 
-export const Card = styled.div`
-  background-color: ${variaveis.bittersweet};
+type EditingProps = {
+  isEditing: boolean
+}
+
+function retornaCorCard(props: EditingProps): string {
+  if (props.isEditing) return variaveis.editing_yellow
+  else return variaveis.bittersweet
+}
+
+export const Card = styled.div<EditingProps>`
+  background-color: ${(props) => retornaCorCard(props)};
   color: ${variaveis.white};
   padding: 32px;
   border-radius: 16px;
