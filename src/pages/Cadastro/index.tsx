@@ -1,11 +1,9 @@
+import Formulario from '../../containers/Formulario'
 import BotaoVoltar from '../../components/BotaoVoltar'
 
 const Cadastro = () => (
   <>
-    <form>
-      <input type="text" />
-      <button type="submit">Adicionar</button>
-    </form>
+    <Formulario />
     <BotaoVoltar />
   </>
 )
